@@ -4,6 +4,7 @@ var wordOutput = document.getElementById("word-output");
 var startButton = document.getElementById("start-button");
 var wordList = [];
 var wordInterval;
+var currentWordIndex = 0; // Movendo a declaração de currentWordIndex para o escopo global
 
 function startReadingWords() {
   if (wordInput.value) {
@@ -45,10 +46,8 @@ function startReadingWords() {
   startInterval();
 }
 
-// Modificando a função startInterval() aqui
 function startInterval() {
-  clearInterval(wordInterval); // Adicionando esta linha para limpar o intervalo anterior
-  var currentWordIndex = 0;
+  clearInterval(wordInterval);
   wordInterval = setInterval(showNextWord, 1000 / speedSlider.value);
 
   function showNextWord() {
@@ -60,12 +59,11 @@ function startInterval() {
       currentWordIndex++;
     }
   }
-
   startButton.disabled = true;
 }
 
 startButton.addEventListener("click", startReadingWords);
-
+//até aqui
 var pauseButton = document.getElementById("pause-button");
 var resumeButton = document.getElementById("resume-button");
 var restartButton = document.getElementById("restart-button");
