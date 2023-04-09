@@ -15,6 +15,7 @@ body {
   background-repeat: no-repeat;
   background-position: center calc(450px + 100px);
   background-size: 600px 700px;
+  zoom: 67%;
 }
 
 h1 {
