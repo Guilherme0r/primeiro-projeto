@@ -4,7 +4,7 @@ var wordOutput = document.getElementById("word-output");
 var startButton = document.getElementById("start-button");
 var wordList = [];
 var wordInterval;
-var currentWordIndex = 0; // Movendo a declaração de currentWordIndex para o escopo global
+var currentWordIndex = 0;
 
 function startReadingWords() {
   if (wordInput.value) {
@@ -22,7 +22,9 @@ function startReadingWords() {
       loadingTask.promise.then(function(pdf) {
         var maxPages = pdf.numPages;
         var countPromises = [];
-        for (var j = 1; j <= maxPages; j++) {
+        // Iniciando a leitura do PDF a partir da página especificada pelo usuário
+        var startPage = parseInt(document.getElementById("start-page-input").value);
+        for (var j = startPage; j <= maxPages; j++) {
           var page = pdf.getPage(j);
           countPromises.push(page.then(function(page) {
             var textContent = page.getTextContent();
@@ -63,7 +65,7 @@ function startInterval() {
 }
 
 startButton.addEventListener("click", startReadingWords);
-//até aqui
+
 var pauseButton = document.getElementById("pause-button");
 var resumeButton = document.getElementById("resume-button");
 var restartButton = document.getElementById("restart-button");
@@ -78,6 +80,7 @@ resumeButton.addEventListener("click", function() {
 
 restartButton.addEventListener("click", function() {
   clearInterval(wordInterval);
+  currentWordIndex = 0; // Reiniciando o índice da palavra atual ao clicar no botão "Reiniciar"
   startInterval();
 });
 
@@ -91,3 +94,17 @@ speedSlider.oninput = function() {
     startInterval();
   }
 }
+
+// Adicionando a funcionalidade do botão "Adicionar novo"
+var addNewButton = document.getElementById("file-upload");
+
+addNewButton.addEventListener("click", function() {
+  // Limpando o conteúdo do campo de entrada de texto e do campo de upload de arquivo
+  wordInput.value = "";
+  fileUpload.value = "";
+  // Reiniciando a leitura das palavras
+  clearInterval(wordInterval);
+  wordList = [];
+  currentWordIndex = 0;
+  wordOutput.innerHTML = "";
+});
