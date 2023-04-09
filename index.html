@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Word Flash</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xmldom/0.7.0/xmldom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.25.1/docxtemplater.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  </head>
+  <body>
+    <h1>FlashWords</h1>
+    <div id="word-container">
+      <label for="word-input">Digite ou cole seu texto aqui:</label>
+      <textarea id="word-input">Seja bem-vindo à nossa página de melhoria de velocidade de leitura! Aqui você pode praticar sua leitura dinâmica de maneira fácil e divertida. Basta adicionar um texto em branco ou fazer upload de um PDF e clicar em iniciar para começar a leitura. Nossa página retornará palavra por palavra do texto que você escolheu na velocidade que você escolheu. Com a prática regular, você pode melhorar sua velocidade de leitura e compreensão. Experimente agora e veja como é fácil melhorar sua leitura com nossa página!</textarea>
+      <label for="speed-slider">Velocidade:</label>
+      <input type="range" id="speed-slider" name="speed-slider" min="1" max="10" value="5" />
+      <span id="speed-value">5</span>
+      <p></p>
+      <label for="file-upload">Envie um arquivo (PDF):</label>
+      <label for="word-input"> Para ler um novo arquivo, atualize a página e escolha um novo documento.</label>
+      <input type="file" id="file-upload" accept=".pdf,.doc,.docx" />
+      <!-- Mover o botão "Escolher arquivo" para fora do contêiner #button-container -->
+      <div id="file-upload-container">
+        <button class="file-upload-button">Escolher arquivo</button>
+      </div>
+      <div id="button-container">
+        <button id="start-button">Iniciar</button>
+        <button id="pause-button">Pausar</button>
+        <button id="resume-button">Continuar</button>
+        <button id="restart-button">Reiniciar</button>
+      </div>
+
+      <div id="word-output"></div>
+    </div>
+    <script src="script.js"></script>
+
+    <!-- Adicionar um evento de clique ao novo botão para acionar o botão de entrada de arquivo original -->
+    <script>
+      document.querySelector(".file-upload-button").addEventListener("click", function () {
+        document.querySelector("#file-upload").click();
+      });
+    </script>
+  </body>
+</html>

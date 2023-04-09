@@ -1,0 +1,124 @@
+@media screen and (min-width: 600px) {
+  }
+  body {
+    zoom: 115%;
+}
+@media screen and (min-width: 1024px) {
+  }
+  body {
+    zoom: 67%;
+}
+body {
+  background-color: #F0F0F0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('teste.svg');
+  background-repeat: no-repeat;
+  background-position: center calc(450px + 100px);
+  background-size: 600px 700px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+#word-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+label,
+input,
+textarea,
+button {
+  margin-bottom:20px;
+}
+
+label {
+  display:block;
+}
+
+textarea {
+  width:100%;
+  height:200px;
+  font-size:1.2rem;
+  padding:5px;
+  box-sizing:border-box;
+}
+
+button {
+  display:inline-block;
+  margin:auto;
+  font-size:1.5rem;
+  padding:15px 30px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  background-color:#333333;
+  color:white;
+}
+
+button:hover {
+  background-color:#1a1a1a;
+}
+
+button:disabled {
+  background-color:#4d4d4d;
+  cursor:default;
+}
+
+#word-output {
+  margin-top:200px;
+  font-size:3rem;
+  text-align:center;
+}
+
+#speed-slider {
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+#speed-value {
+    font-size:1.2rem; 
+    font-weight:bold; 
+    text-align:center; 
+    display:block; 
+    margin-top:-20px; 
+    margin-bottom:-10px; 
+}
+
+/* Ocultar o botão de entrada de arquivo original */
+#file-upload { 
+    display:none; 
+}
+/* Criar um novo botão com o estilo desejado */
+.file-upload-button{
+    display:block; 
+    margin:auto; 
+    margin-bottom:10px; 
+    font-size:1.5rem; 
+    padding:15px30px; 
+    border-radius:10px; 
+    border:none; 
+    cursor:pointer; 
+    background-color:#333333; 
+    color:white; 
+}
+.file-upload-button:hover{
+    background-color:#1a1a1a; 
+}
+/* Adicionar um novo seletor para centralizar o botão "Escolher arquivo" */
+#file-upload-container { 
+    text-align:center; 
+}
