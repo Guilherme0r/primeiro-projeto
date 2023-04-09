@@ -2,6 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <h1>
+      <img src="logo.svg"
+      alt="Image" style="float: center;
+      margin-top:10px; margin-bottom: -80px; width: 200px; height: 200px;">
+    </h1>
+    <h1> <p></p></h1>
     <title>Word Flash</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
@@ -19,17 +25,20 @@
       <span id="speed-value">5</span>
       <p></p>
       <label for="file-upload">Envie um arquivo (PDF):</label>
-      <label for="word-input"> Para ler um novo arquivo, atualize a página e escolha um novo documento.</label>
+      <label for="word-input"style="color:red;"> Para ler um novo arquivo (PDF), atualize a página e escolha um novo documento.</label>
       <input type="file" id="file-upload" accept=".pdf,.doc,.docx" />
       <!-- Mover o botão "Escolher arquivo" para fora do contêiner #button-container -->
       <div id="file-upload-container">
-        <button class="file-upload-button">Escolher arquivo</button>
+        <button class="file-upload-button">Escolher Novo Arquivo</button>
       </div>
       <div id="button-container">
         <button id="start-button">Iniciar</button>
         <button id="pause-button">Pausar</button>
         <button id="resume-button">Continuar</button>
         <button id="restart-button">Reiniciar</button>
+        <input type="number" id="start-page-input" min="1" value="1">
+  <label for id="start-page-button">Iniciar na página</label>
+
       </div>
 
       <div id="word-output"></div>
