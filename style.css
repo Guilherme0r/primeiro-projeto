@@ -1,32 +1,45 @@
-@media screen and (min-width: 600px) {
-  }
+@media screen and (max-width: 600px) {
   body {
-    zoom: 115%;
+    zoom: 150%;
+  }
 }
+
+@media screen and (min-width: 600px) { }
+
 @media screen and (min-width: 1024px) {
-  }
   body {
-    zoom: 67%;
+    zoom: 50%;
+  }
 }
 body {
   background-color: #F0F0F0;
   font-family: Arial, Helvetica, sans-serif;
   background-image: url('teste.svg');
   background-repeat: no-repeat;
-  background-position: center calc(455px + 100px);
+  background-position: center calc(560px + 350px);
   background-size: 600px 700px;
-  zoom: 67%;
 }
 
 h1 {
   text-align: center;
   font-size: 3rem;
 }
-
+#start-page-input{
+  display: block;
+  margin: 0 auto;
+  text-align:center;
+  bottom:30;
+  margin-top: 40px;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 40px;
+}
 #word-container {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  font-size: 25px;
 }
 
 #text-container {
@@ -81,6 +94,8 @@ button:disabled {
   margin-top:200px;
   font-size:3rem;
   text-align:center;
+  margin-top: 145px;
+  font-size: 55px;
 }
 
 #speed-slider {
@@ -122,4 +137,5 @@ button:disabled {
 /* Adicionar um novo seletor para centralizar o botão "Escolher arquivo" */
 #file-upload-container { 
     text-align:center; 
+
 }
