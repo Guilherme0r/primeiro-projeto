@@ -151,8 +151,6 @@ pauseButton.addEventListener("click", function () {
   togglePause(wordInterval);
 });
 
-
-
 restartButton.addEventListener("click", function () {
   clearInterval(wordInterval);
   currentWordIndex = 0;
